@@ -87,7 +87,7 @@ FIRMWARE_TXZ="${PWD}/files/firmware_armbian.tar.xz"
 BOOTFILES_HOME="${PWD}/files/bootfiles/rockchip/rk3568/h66k-tv"
 GET_RANDOM_MAC="${PWD}/files/get_random_mac.sh"
 BOOTLOADER_IMG="${PWD}/files/rk3568/h66k-tv/bootloader.bin"
-
+UPDATE_H68KTV_SCRIPT="${PWD}/files/update-h68k-tv-openwrt.sh"
 # 20210618 add
 DOCKER_README="${PWD}/files/DockerReadme.pdf"
 
@@ -172,6 +172,15 @@ echo
 echo "修改根文件系统相关配置 ... "
 cd $TGT_ROOT
 copy_supplement_files
+echo "复制 h68k-tv 更新脚本..."
+if [ -f "$UPDATE_H68KTV_SCRIPT" ]; then
+    install -m 0755 "$UPDATE_H68KTV_SCRIPT" "$TGT_ROOT/usr/bin/"
+    echo "✓ 已安装 h68k-tv 更新脚本到 /usr/bin/"
+else
+    echo "⚠ 警告: h68k-tv 更新脚本未找到"
+    echo "  路径: $UPDATE_H68KTV_SCRIPT"
+fi
+
 extract_glibc_programs
 adjust_docker_config
 adjust_openssl_config
@@ -199,6 +208,7 @@ mv ${TGT_IMG} ${OUTPUT_DIR} && sync
 echo "镜像已生成! 存放在 ${OUTPUT_DIR} 下面!"
 echo "========================== end $0 ================================"
 echo
+
 
 
 
