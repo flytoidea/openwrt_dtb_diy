@@ -146,14 +146,15 @@ else
 fi
 
 echo "修改引导分区相关配置 ... "
-
-
-echo "修改引导分区相关配置 ... "
 cd $TGT_BOOT
+# 删除原有相关配置行
+sed -e '/fdtfile=/d' -i armbianEnv.txt  # 新增：删除旧的设备树设置
 sed -e '/rootdev=/d' -i armbianEnv.txt
 sed -e '/rootfstype=/d' -i armbianEnv.txt
 sed -e '/rootflags=/d' -i armbianEnv.txt
+# 添加新的配置
 cat >> armbianEnv.txt <<EOF
+fdtfile=rockchip/rk3568-hlink-h68k-tv.dtb  # 新增：指定设备树文件路径
 rootdev=UUID=${ROOTFS_UUID}
 rootfstype=btrfs
 rootflags=compress=zstd:${ZSTD_LEVEL}
@@ -194,4 +195,5 @@ mv ${TGT_IMG} ${OUTPUT_DIR} && sync
 echo "镜像已生成! 存放在 ${OUTPUT_DIR} 下面!"
 echo "========================== end $0 ================================"
 echo
+
 
