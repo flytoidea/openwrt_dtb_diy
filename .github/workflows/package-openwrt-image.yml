@@ -32,8 +32,9 @@ on:
           - h28k
           - h66k
           - h68k
+          - h68k-tv
           - h69k
-          - h69k-max
+          - h69kk-max
           - h88k
           - h88k-v3
           - jp-tvbox
