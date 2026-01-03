@@ -361,7 +361,7 @@ init_packit_repo() {
         fi
         chmod +x ${SELECT_PACKITPATH}/${SCRIPT_DIY}
         echo -e "List of [ ${SELECT_PACKITPATH} ] directory files:\n $(ls -lh ${SELECT_PACKITPATH})"
-         fi
+        
          echo -e "${STEPS} Auto sync all mk_*.sh scripts to workdir..."
     for script_file in ${GITHUB_WORKSPACE}/mk_*.sh; do
         if [[ -f "${script_file}" ]]; then
