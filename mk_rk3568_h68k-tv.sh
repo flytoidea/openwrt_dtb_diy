@@ -14,7 +14,7 @@ SFE_FLOW=1
 
 PLATFORM=rockchip
 SOC=rk3568
-BOARD=h66k-tv
+BOARD=h68k-tv
 SUBVER=$1
 
 # Kernel image sources
@@ -208,6 +208,7 @@ mv ${TGT_IMG} ${OUTPUT_DIR} && sync
 echo "镜像已生成! 存放在 ${OUTPUT_DIR} 下面!"
 echo "========================== end $0 ================================"
 echo
+
 
 
 
