@@ -72,7 +72,7 @@ SYSFIXTIME_PATCH="${PWD}/files/sysfixtime.patch"
 SSL_CNF_PATCH="${PWD}/files/openssl_engine.patch"
 
 # 20201212 add
-BAL_CONFIG="${PWD}/files/rk3568/h66k-tv/balance_irq"
+BAL_CONFIG="${PWD}/files/rk3568/h68k-tv/balance_irq"
 
 # 20210307 add
 SS_LIB="${PWD}/files/ss-glibc/lib-glibc.tar.xz"
@@ -84,9 +84,9 @@ DOCKERD_PATCH="${PWD}/files/dockerd.patch"
 
 # 20200416 add
 FIRMWARE_TXZ="${PWD}/files/firmware_armbian.tar.xz"
-BOOTFILES_HOME="${PWD}/files/bootfiles/rockchip/rk3568/h66k-tv"
+BOOTFILES_HOME="${PWD}/files/bootfiles/rockchip/rk3568/h68k-tv"
 GET_RANDOM_MAC="${PWD}/files/get_random_mac.sh"
-BOOTLOADER_IMG="${PWD}/files/rk3568/h66k-tv/bootloader.bin"
+BOOTLOADER_IMG="${PWD}/files/rk3568/h68k-tv/bootloader.bin"
 UPDATE_H68KTV_SCRIPT="${PWD}/files/update-h68k-tv-openwrt.sh"
 # 20210618 add
 DOCKER_README="${PWD}/files/DockerReadme.pdf"
@@ -107,13 +107,13 @@ DDBR="${PWD}/files/openwrt-ddbr"
 SSH_CIPHERS="aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr,chacha20-poly1305@openssh.com"
 SSHD_CIPHERS="aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr"
 # 20220927 add
-BOARD_HOME="${PWD}/files/rk3568/h66k-tv/board.d"
+BOARD_HOME="${PWD}/files/rk3568/h68k-tv/board.d"
 # 20221001 add
 MODULES_HOME="${PWD}/files/rk3568/modules.d"
 # 20221123 add
-BOARD_MODULES_HOME="${PWD}/files/rk3568/h66k-tv/modules.d"
+BOARD_MODULES_HOME="${PWD}/files/rk3568/h68k-tv/modules.d"
 # 20221013 add
-WIRELESS_CONFIG="${PWD}/files/rk3568/h66k-tv/wireless"
+WIRELESS_CONFIG="${PWD}/files/rk3568/h68k-tv/wireless"
 
 # 20230921 add
 #DC_VOLTAGE_PATCH="${PWD}/files/rk3568/h69k/dc_voltage.patch"
@@ -208,6 +208,7 @@ mv ${TGT_IMG} ${OUTPUT_DIR} && sync
 echo "镜像已生成! 存放在 ${OUTPUT_DIR} 下面!"
 echo "========================== end $0 ================================"
 echo
+
 
 
 
